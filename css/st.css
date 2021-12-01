@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    padding: 4vw;
+    background-color: #27e2eb85;
+}
+.container.animation {
+    justify-content: center;
+}
+.container .circle{
+    position: relative;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    animation-name: spin;
+    animation-duration: 4s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+}
+.container .object {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: #ac1bfa;
+    animation-name: objectTransform;  /*название анимации*/
+    animation-duration: 1s;         /*продолжительность одного цикла анимации*/
+    animation-timing-function: linear;  /*описывает как будет развиваться анимация,
+    анимация происходит равномерно на протяжении всего времени, без колебаний в скорости.*/
+    animation-delay: 0s; /* определяет, когда анимация начнется.*/
+    animation-direction: alternate; /*определяет, должна ли анимация воспроизводиться в обратном порядке 
+    в некоторых или во всех циклах. Когда анимация воспроизводится в обратном порядке, временные функции
+     также меняются местами*/
+    animation-iteration-count: infinite; /*указывает, сколько раз проигрывается цикл анимации(бесконечно)*/
+    animation-play-state: running; /*Анимация выполняется. Значение по умолчанию.*/
+}
+.container .object:nth-child(1) {   /*:nth-child используется для добавления стиля
+                                    к элементам на основе нумерации в дереве элементов.*/
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    animation-delay: .1s;           /* устанавливает время ожидания перед воспроизведением анимации*/
+}
+.container .object:nth-child(2) {
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    animation-delay: .2s;
+}
+.container .object:nth-child(3) {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    animation-delay: .3s;
+}
+.container .object:nth-child(4) {
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    animation-delay: .4s;
+}
+@keyframes objectTransform {
+    0% {
+        border-radius: 0;
+        background-color: #2a4bf1;
+    }
+    25% {
+        background-color: #20ec38;
+    }
+    50% {
+        background-color: #fff12bf5;
+    }
+    75% {
+        background-color: #f5721bec;
+    }
+    100% {
+        border-radius: 50%;
+        background-color: #eb1515f5;
+    }
+}
+@keyframes spin {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
