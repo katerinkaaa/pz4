@@ -3,6 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+body {
+     background-color: #27e2eb85;
+}    
 .container {
     display: flex;
     align-items: center;
@@ -10,7 +13,7 @@
     min-height: 100vh;
     width: 100%;
     padding: 4vw;
-    background-color: #27e2eb85;
+   
 }
 .container.animation {
     justify-content: center;
